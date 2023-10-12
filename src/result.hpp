@@ -1,3 +1,5 @@
+#ifndef ZIFMANN_VARIANT_UTILS_RESULT_HPP
+#define ZIFMANN_VARIANT_UTILS_RESULT_HPP
 #include "result_t.hpp"
 #include <type_traits>
 
@@ -8,3 +10,4 @@
 #define ERR(var, res) \
     (bool _if_let_ok = res.is_ok(); _if_let_ok) \
         for (second_type<decltype(res)>::type var = res.error(); _if_let_ok; _if_let_ok = false)
+#endif

@@ -1,3 +1,5 @@
+#ifndef ZIFMANN_VARIANT_UTILS_RESULT_T_HPP
+#define ZIFMANN_VARIANT_UTILS_RESULT_T_HPP
 #include <variant>
 
 #include "errors.hpp"
@@ -21,7 +23,7 @@ class Result {
         if (ok) {
             return std::get<T>(value);
         } else {
-            throw UnwrapError();
+            throw OkUnwrapError();
         }
     }
 
@@ -77,3 +79,4 @@ struct second_type<Result<T, E>> {
 };
 
 }  // namespace zifmann
+#endif
